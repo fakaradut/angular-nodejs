@@ -1,49 +1,14 @@
-<div class="container-fluid">
+<div>
+  <form #userForm = "ngForm">
+<h2 class="sr-only">Login Form</h2>
+<div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+<div class="form-group">
+  <input class="form-control" [(ngModel)]="user.email" type="email" name="email" placeholder="Email"></div>
+<div class="form-group">
+  <input class="form-control" [(ngModel)]="user.password" type="password" name="password" placeholder="Password"></div>
 
-    <form>
-
-      <div class="form-group">
-           <label >Name</label>
-           <input type="text" class="form-control">
-        </div>
-
-        <div class="form-group" >
-            <label >Email</label>
-            <input type="email" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label >Phone</label>
-            <input type="tel" class="form-control">
-        </div>
-
-        <div class="from-group">
-          <select class="custom-select">
-            <option selected >My favourite</option>
-            <option *ngFor="let topic of topics$ |async">{{topic}}</option>
-          </select>
-        </div>
-
-
-        <div class="mb-3">
-          <label > Time preference</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="timePreference" value="morning">
-            <label class="form-check-label"> Morning (9AM - 12PM)</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="timePreference" value="evening">
-            <label class="form-check-label"> Morning (5PM - 8PM)</label>
-          </div>
-        </div>
-
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox">
-          <label for="form-check-label">Send me promotional offers</label>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Submit form</button>
-    </form>
-
-  </div>
-
+<div class="form-group">
+  <button class="btn btn-primary btn-block" type="button" (click)="login()">Log In</button>
+</div>
+</form>
+</div>

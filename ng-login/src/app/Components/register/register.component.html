@@ -1,0 +1,15 @@
+<div>
+  <form>
+<h2 class="sr-only">Register Form</h2>
+<div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+
+<div class="form-group">
+  <input class="form-control" [(ngModel)]="user.email" type="email" name="email" placeholder="Email"></div>
+<div class="form-group">
+  <input class="form-control" [(ngModel)]="user.password" type="password" name="password" placeholder="Password"></div>
+
+<div class="form-group">
+  <button class="btn btn-primary btn-block" (click)="register()">Register</button>
+</div>
+</form>
+</div>

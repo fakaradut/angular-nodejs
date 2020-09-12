@@ -1,1 +1,30 @@
-<app-login></app-login>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Authentication JWT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/restricted" routerLinkActive="active">Restricted</a>
+      </li>
+
+      <ul class="nav navbar-nav ml-auto" >
+        <a class="nav-link" id="login" *ngIf="!loginService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="nav-link" id="register" *ngIf="!loginService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+        <a class="nav-link" id="logout" style="cursor:pointer" *ngIf="loginService.loggedIn()" (click)="loginService.logoutUser()">Logout</a>
+    </ul>
+
+    </ul>
+
+
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
